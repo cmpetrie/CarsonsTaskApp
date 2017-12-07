@@ -24,6 +24,7 @@ namespace TaskAppLogic
         string Title { get; set; }
         string Description { get; set; }
         IUser AssignedTo { get; set; }
+        // XmlUser AssignedTo { get; set; }
         DateTime Due { get; set; }
         Priority Priority { get; set; }
     }

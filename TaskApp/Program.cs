@@ -13,14 +13,14 @@ namespace TaskApp
         static void Main(string[] args)
         {
 
-            IUserDatabase userDb = new MyUserDatabase(); // create a new user database
+            IUserDatabase userDb = new XmlUserDatabase("XmlUsers.xml"); // create a new user database
             IUser carson = userDb.GetUser("Carson", "cpword"); //random user
             userDb.SaveUser(carson); // add this user to the list. 
 
             IUser daddy = userDb.GetUser("daddy", "daddyiscool");
             userDb.SaveUser(daddy); // add this user to the list. 
 
-            ITaskDatabase taskDb = new MyTaskDatabase(); // create a new task database
+            ITaskDatabase taskDb = new XmlTaskDatabase("XmlTasks.xml"); // create a new task database
 
             ITask task1 = taskDb.NewTask();
             task1.AssignedTo = carson;
