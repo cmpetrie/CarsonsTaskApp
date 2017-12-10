@@ -12,6 +12,7 @@ namespace TaskAppLogic
     {
         public XmlTaskDatabase(string filename)
         {
+            mFilename = filename;
             if (File.Exists(filename))
             {
                 mFilename = filename;
@@ -67,8 +68,10 @@ namespace TaskAppLogic
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public IUser AssignedTo { get; set; }
+        [XmlIgnore] public IUser AssignedTo { get; set; }
         public DateTime Due { get; set; }
         public Priority Priority { get; set; }
+
+        public string AssignedToUserName { get; set; }
     }
 }
